@@ -9,16 +9,14 @@ set COMP_MPI mpiifort
 set C_COMP icc
 set C_COMP_MP mpcc
 
-set JEDI_OPT /scratch1/NCEPDEV/jcsda/Ryan.Honeyager/jedi-stack/opt
+set JEDI_OPT /scratch1/NCEPDEV/jcsda/jedipara/opt/modules
+setenv JEDI_OPT /scratch1/NCEPDEV/jcsda/jedipara/opt/modules
+module use -a $JEDI_OPT/modulefiles/core
+module load jedi/intel-impi/2020.2/ecbuild35
 
-module use /scratch1/NCEPDEV/jcsda/Ryan.Honeyager/jedi-stack/opt/modulefiles/apps
-module use /scratch1/NCEPDEV/jcsda/Ryan.Honeyager/jedi-stack/opt/modulefiles/core
 
-module purge
-module load jedi/intel-20.2-impi-18
-module load nceplibs-bufr
+module load nco
 
 module use -a /scratch2/NCEPDEV/marineda/Jong.Kim/save/modulefiles/
 module load anaconda/3.15.1
 
-module load nco
